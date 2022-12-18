@@ -2,8 +2,8 @@
 #import <Foundation/Foundation.h>
 #import <Foundation/NSUserDefaults+Private.h>
 
-static NSString * nsDomainString = @"com.alexburneikis.customcarrier15";
-static NSString * nsNotificationString = @"com.alexburneikis.customcarrier15/preferences.changed";
+static NSString * nsDomainString = @"com.alexburneikis.customcarrierprefs";
+static NSString * nsNotificationString = @"com.alexburneikis.customcarrierprefs/preferences.changed";
 static BOOL enabled;
 static NSString * carrierText;  // Declare carrierText variable
 
