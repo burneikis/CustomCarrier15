@@ -1,0 +1,9 @@
+Package: com.alexburneikis.customcarrier
+Name: Custom Carrier
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Changes Carrier Text.
+Maintainer: Alexander Burneikis
+Author: Alexander Burneikis
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
