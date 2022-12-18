@@ -1,6 +1,6 @@
 Package: com.alexburneikis.customcarrier15
 Name: CustomCarrier15
-Version: 0.0.1
+Version: 1.0.0
 Architecture: iphoneos-arm
 Description: An awesome MobileSubstrate tweak!
 Maintainer: Alexander Burneikis
