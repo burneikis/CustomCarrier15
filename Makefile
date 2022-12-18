@@ -1,10 +1,12 @@
+TARGET := iphone:clang:latest:7.0
 INSTALL_TARGET_PROCESSES = SpringBoard
+
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = CustomCarrier
+TWEAK_NAME = CustomCarrier15
 
-CustomCarrier_FILES = Tweak.x
-CustomCarrier_CFLAGS = -fobjc-arc
+CustomCarrier15_FILES = Tweak.x
+CustomCarrier15_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
