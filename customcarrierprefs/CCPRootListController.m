@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "XXXRootListController.h"
+#import "CCPRootListController.h"
 
-@implementation XXXRootListController
+@implementation CCPRootListController
 
 - (NSArray *)specifiers {
 	if (!_specifiers) {

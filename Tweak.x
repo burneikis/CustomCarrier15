@@ -33,6 +33,15 @@ BOOL isCarrier(NSString *string) {
 	if (string.length <= 2) {
 		return NO;
 	}
+	if ([string isEqualToString:@"LTE"]) {
+		return NO;
+	}
+	if ([string rangeOfString:@"%"].location != NSNotFound) {
+		return NO;
+	}
+	if ([string rangeOfString:@"◀︎"].location != NSNotFound) {
+		return NO;
+	}
 	return YES;
 }
 
@@ -40,7 +49,7 @@ BOOL isCarrier(NSString *string) {
 
 -(void)setText:(NSString *)text {
 	if (isCarrier(text) && enabled) {
-		%orig(carrierText);  // Use carrierText variable as the value for carrierText
+		%orig(carrierText); 
 	} else {
 		%orig(text);
 	}

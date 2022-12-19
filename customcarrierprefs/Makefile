@@ -5,7 +5,7 @@ include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = CustomCarrierPrefs
 
-CustomCarrierPrefs_FILES = XXXRootListController.m
+CustomCarrierPrefs_FILES = CCPRootListController.m
 CustomCarrierPrefs_FRAMEWORKS = UIKit
 CustomCarrierPrefs_PRIVATE_FRAMEWORKS = Preferences
 CustomCarrierPrefs_INSTALL_PATH = /Library/PreferenceBundles
