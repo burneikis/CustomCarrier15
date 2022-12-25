@@ -6,6 +6,7 @@ static NSString * nsDomainString = @"com.alexburneikis.customcarrierprefs";
 static NSString * nsNotificationString = @"com.alexburneikis.customcarrierprefs/preferences.changed";
 static BOOL enabled;
 static NSString * carrierText;  // Declare carrierText variable
+static NSNumber * cellularLength;  // Declare cellularLength variable
 
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
 	NSNumber * enabledValue = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"enabled" inDomain:nsDomainString];
@@ -13,6 +14,9 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 
 	// Read value of carrierText preference setting
 	carrierText = [[NSUserDefaults standardUserDefaults] objectForKey:@"carrierText" inDomain:nsDomainString];
+
+	// Read value of cellularLength preference setting
+	cellularLength = [[NSUserDefaults standardUserDefaults] objectForKey:@"cellularLength" inDomain:nsDomainString];
 }
 
 %ctor {
@@ -26,11 +30,11 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 
 }
 
-BOOL isCarrier(NSString *string) {
+BOOL isCarrier(NSString *string, NSNumber *length) {
 	if ([string rangeOfString:@":"].location != NSNotFound) {
 		return NO;
 	}
-	if (string.length <= 2) {
+	if (string.length <= [length integerValue]) {
 		return NO;
 	}
 	if ([string isEqualToString:@"LTE"]) {
@@ -48,7 +52,7 @@ BOOL isCarrier(NSString *string) {
 %hook _UIStatusBarStringView
 
 -(void)setText:(NSString *)text {
-	if (isCarrier(text) && enabled) {
+	if (isCarrier(text, cellularLength) && enabled) {
 		%orig(carrierText); 
 	} else {
 		%orig(text);
