@@ -44,7 +44,7 @@
 			<key>label</key>
 			<string>Cellular Data Length</string>
 			<key>footerText</key>
-			<string>If your cellular is "5G+" or "5GE", set this to 3.</string>
+			<string>If your cellular label is "5G+" or "5G E" this may help</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -55,11 +55,13 @@
 			<array>
 				<string>2</string>
 				<string>3</string>
+				<string>4</string>
 			</array>
 			<key>validValues</key>
 			<array>
 				<integer>2</integer>
 				<integer>3</integer>
+				<integer>4</integer>
 			</array>
 			<key>default</key>
 			<integer>2</integer>

@@ -34,8 +34,13 @@ BOOL isCarrier(NSString *string, NSNumber *length) {
 	if ([string rangeOfString:@":"].location != NSNotFound) {
 		return NO;
 	}
-	if (string.length <= [length integerValue]) {
+	if (string.length <= 2) {
 		return NO;
+	}
+	if (string.length <= [length integerValue]) {
+		if ([string rangeOfString:@"G"].location != NSNotFound) {
+			return NO;
+		}
 	}
 	if ([string isEqualToString:@"LTE"]) {
 		return NO;
