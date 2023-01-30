@@ -22,9 +22,9 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Carrier Text</string>
+			<string>Custom Text</string>
 			<key>footerText</key>
-			<string>This updates in the background, no need to respring.</string>
+			<string>Enter the text you want to display in the status bar.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -34,7 +34,7 @@
 			<key>defaults</key>
 			<string>com.alexburneikis.customcarrierprefs</string>
 			<key>key</key>
-			<string>carrierText</string>
+			<string>customText</string>
 			<key>PostNotification</key>
 			<string>com.alexburneikis.customcarrierprefs/preferences.changed</string>
 		</dict>

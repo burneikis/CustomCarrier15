@@ -5,14 +5,14 @@
 static NSString * nsDomainString = @"com.alexburneikis.customcarrierprefs";
 static NSString * nsNotificationString = @"com.alexburneikis.customcarrierprefs/preferences.changed";
 static BOOL enabled;
-static NSString * carrierText;  // Declare carrierText variable
+static NSString * customText;
 
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
 	NSNumber * enabledValue = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"enabled" inDomain:nsDomainString];
 	enabled = (enabledValue)? [enabledValue boolValue] : YES;
 
-	// Read value of carrierText preference setting
-	carrierText = [[NSUserDefaults standardUserDefaults] objectForKey:@"carrierText" inDomain:nsDomainString];
+	// Read value of customText preference setting
+	customText = [[NSUserDefaults standardUserDefaults] objectForKey:@"customText" inDomain:nsDomainString];
 }
 
 %ctor {
@@ -28,7 +28,7 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 -(void)setString:(id)string {
 	if (!enabled) { return %orig; }
 
-	%orig(carrierText);
+	%orig(customText);
 
 }
 
