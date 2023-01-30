@@ -38,6 +38,14 @@
 			<key>PostNotification</key>
 			<string>com.alexburneikis.customcarrierprefs/preferences.changed</string>
 		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Done</string>
+			<key>action</key>
+			<string>done</string>
+		</dict>
 	</array>
 	<key>title</key>
 	<string>CustomCarrierPrefs</string>

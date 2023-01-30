@@ -11,4 +11,8 @@
 	return _specifiers;
 }
 
+- (void)done {
+	[self.view endEditing:YES];
+}
+
 @end
