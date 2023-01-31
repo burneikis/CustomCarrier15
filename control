@@ -1,6 +1,6 @@
 Package: com.alexburneikis.customcarrier
 Name: Custom Carrier 15
-Version: 1.5.0
+Version: 1.5.1
 Architecture: iphoneos-arm
 Description: Changes carrier text.
 Maintainer: Alexander Burneikis
